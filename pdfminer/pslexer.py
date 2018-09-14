@@ -42,7 +42,7 @@ def t_FLOAT(t):
     return t
 
 RE_LITERAL_HEX = re.compile(r'#[0-9A-Fa-f]{2}')
-@lex.TOKEN(r'/.+?' + delimiter_end)
+@lex.TOKEN(r'/.*?' + delimiter_end)
 def t_LITERAL(t):
     newvalue = t.value[1:]
     # If there's '#' chars in the literal, we much de-hex it
